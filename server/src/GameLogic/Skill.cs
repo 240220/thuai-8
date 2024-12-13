@@ -33,23 +33,28 @@ public class Skill
         }
     }
 
-    public void Start() {
+    public void Start()
+    {
 
     }
-    public void Activate() {
+    public void Activate()
+    {
         currentActiveTime = maxActiveTime;
         Start();
     }
 
-    public void End() {
-        
+    public void End()
+    {
+
     }
 
     public void UpdateActiveTime()
     {
-        if (currentActiveTime > 0) {
+        if (currentActiveTime > 0)
+        {
             currentActiveTime--;
-            if (currentActiveTime == 0) {
+            if (currentActiveTime == 0)
+            {
                 End();
             }
         }
