@@ -17,6 +17,8 @@ public class Skill
     public SkillName name;
     public int maxCooldown;
     public int currentCooldown;
+    public int activeTime;
+    public int currentActiveTime;
 
     public Skill(SkillName skillName)
     {
@@ -28,6 +30,22 @@ public class Skill
         if (currentCooldown > 0)
         {
             currentCooldown--;
+        }
+    }
+
+    public void UpdateActiveTime()
+    {
+        if (currentActiveTime > 0)
+        {
+            currentActiveTime--;
+        }
+    }
+    public virtual void UseSkill(Player player)
+    {
+        if (currentCooldown == 0)
+        {
+            currentCooldown = maxCooldown;
+            currentActiveTime = activeTime;
         }
     }
 }
